@@ -80,6 +80,41 @@ buy(){
   })
 },
 
+  addToCart(){
+    wx.showLoading({
+      title: 'Loading...',
+    })
+
+    db.addToCart(this.data.product).then(result => {
+      wx.hideLoading()
+
+      const data = result.result
+
+      if (data) {
+        wx.showToast({
+          title: 'Succeed'
+        })
+      }
+    }).catch(err => {
+      console.error(err)
+      wx.hideLoading()
+
+      wx.showToast({
+        icon: 'none',
+        title: 'Failed'
+      })
+    })
+  },
+
+  onTapReviewEntry() {
+    if (this.data.product.reviewCount) {
+      const product = this.data.product
+      wx.navigateTo({
+        url: `/pages/review/review?productId=${product._id}&price=${product.price}&name=${product.name}&image=${product.image}`,
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

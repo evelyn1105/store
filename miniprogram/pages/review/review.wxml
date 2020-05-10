@@ -1,0 +1,19 @@
+<!--pages/review/review.wxml-->
+<product product-image="{{product.image}}" product-name="{{product.name}}" product-price="{{product.price}}"></product>
+
+<view class="review-list">
+  <view class="review-title">{{reviewList.length}}reviews</view>
+  <view wx:for="{{reviewList}}" wx:key="id" class="review-card">
+    <image class="review-avatar" src="{{item.avatar}}"></image>
+    <view class="review-cnt">
+      <view class="review-top">
+        <view class="review-username">{{item.username}}</view>
+        <view class="review-time">{{item.createTime}}</view>
+      </view>
+      <view class="review-content">{{item.content}}</view>
+      <view class="preview-list" wx:if="{{item.images.length}}">
+        <image class="preview-item" wx:for="{{item.images}}" wx:for-item="pitem" wx:for-index="pindex" wx:key="*this" src="{{pitem}}" mode="aspectFit"  bindtap="previewImage" data-src="{{pitem}}"></image>
+</view>
+    </view>
+  </view>
+</view>

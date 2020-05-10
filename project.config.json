@@ -22,7 +22,7 @@
 	},
 	"appid": "wx9ffd2b215a5a022c",
 	"projectname": "store",
-	"libVersion": "2.8.1",
+	"libVersion": "2.11.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
@@ -73,6 +73,25 @@
 					"id": -1,
 					"name": "pages/cart",
 					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/add-review/add-review",
+					"pathName": "pages/add-review/add-review",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/review/review",
+					"pathName": "pages/review/review",
 					"scene": null
 				}
 			]
